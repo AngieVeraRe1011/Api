@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Calificación</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: beige;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: lightgray;
+            color: blue;
+            padding: 30px;
+        }
+
+        form {
+            width: 60%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left; /* Alinea el contenido del formulario a la izquierda */
+            font-weight: bold; /* Aplica negrita al formulario */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: calc(80% - 22px); /* Ajusta el ancho según tus necesidades */
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: DeepSkyBlue;
+        }
+        button {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: DeepSkyBlue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agregar Calificación</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="id_estudiante">Estudiante:</label>
+        {{ form.estudiante }}
+
+        <label for="id_curso">Curso:</label>
+        {{ form.curso }}
+
+        <label for="id_calificacion">Calificación:</label>
+        {{ form.calificacion }}
+
+        <input type="submit" value="Guardar">
+    </form>
+    <a href="{% url 'inicio' %}">
+        <button>Volver a la página inicio</button>
+    </a>
+</body>
+</html>
+
+
+
+

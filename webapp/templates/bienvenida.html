@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESTUDIANTES</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+    header {
+      background-color: Darkblue;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      background-color: lightblue;
+      padding: 1em 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main img {
+      margin-bottom: 20px; /* Add margin between logo and button */
+    }
+
+    main .download-button {
+      text-decoration: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    main .download-button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ESTUDIANTES UG</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'agregar_estudiante' %}">Agregar Estudiante</a></li>
+      <li><a href="{% url 'agregar_curso' %}">Agregar Curso</a></li>
+      <li><a href="{% url 'agregar_calificacion' %}">Agregar Calificación</a></li>
+      <li><a href="{% url 'lista_estudiantes' %}">Lista de Estudiantes</a></li>
+      <li><a href="{% url 'lista_cursos' %}">Lista de Cursos</a></li>
+      <li><a href="{% url 'lista_calificaciones' %}">Lista de Calificaciones</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/LogoUGcolor.png" alt="logo ug" width="300">
+
+    <!-- Add a button for downloading the report -->
+    <a href="{% url 'reporte_estudiantes_excel' %}" class="download-button">Descargar Reporte de Estudiantes</a>
+  </main>
+
+  <footer>
+    <p>GRUPO#6</p>
+  </footer>
+</body>
+</html>

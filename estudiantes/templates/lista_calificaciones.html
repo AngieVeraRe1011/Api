@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Calificaciones</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: beige;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: lightgray;
+            color: blue;
+            padding: 30px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 20px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: DeepSkyBlue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Calificaciones</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Estudiante</th>
+                <th>Curso</th>
+                <th>Calificación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calificacion in calificaciones %}
+                <tr>
+                    <td>{{ calificacion.estudiante }}</td>
+                    <td>{{ calificacion.curso }}</td>
+                    <td>{{ calificacion.calificacion }}</td>
+                    <td>
+                        <a href="{% url 'modificar_calificacion' calificacion.id %}">Modificar</a>
+                        <a href="{% url 'eliminar_calificacion' calificacion.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'inicio' %}">
+        <button>Volver a la página de inicio</button>
+    </a>
+</body>
+</html>
