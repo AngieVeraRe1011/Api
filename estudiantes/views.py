@@ -146,14 +146,11 @@ class ReporteEstudiantesExcel(View):
 class EstudianteViewSet(viewsets.ModelViewSet):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 class CursoViewSet(viewsets.ModelViewSet):
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 class CalificacionesViewSet(viewsets.ModelViewSet):
     queryset = Calificaciones.objects.all()
     serializer_class = CalificacionesSerializer
-    permission_classes = [permissions.IsAuthenticated]
